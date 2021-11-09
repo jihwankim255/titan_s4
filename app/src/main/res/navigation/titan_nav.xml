@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/titan_nav"
+    app:startDestination="@id/arminFragment">
+
+    <fragment
+        android:id="@+id/sashaFragment"
+        android:name="com.bokchi.titan_s4.sashaFragment"
+        android:label="fragment_sasha"
+        tools:layout="@layout/fragment_sasha" >
+        <action
+            android:id="@+id/action_sashaFragment_to_arminFragment"
+            app:destination="@id/arminFragment" />
+        <action
+            android:id="@+id/action_sashaFragment_to_hangeFragment"
+            app:destination="@id/hangeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/arminFragment"
+        android:name="com.bokchi.titan_s4.arminFragment"
+        android:label="fragment_armin"
+        tools:layout="@layout/fragment_armin" >
+        <action
+            android:id="@+id/action_arminFragment_to_sashaFragment"
+            app:destination="@id/sashaFragment" />
+        <action
+            android:id="@+id/action_arminFragment_to_hangeFragment"
+            app:destination="@id/hangeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/hangeFragment"
+        android:name="com.bokchi.titan_s4.hangeFragment"
+        android:label="fragment_hange"
+        tools:layout="@layout/fragment_hange" >
+        <action
+            android:id="@+id/action_hangeFragment_to_arminFragment"
+            app:destination="@id/arminFragment" />
+        <action
+            android:id="@+id/action_hangeFragment_to_sashaFragment"
+            app:destination="@id/sashaFragment" />
+    </fragment>
+</navigation>

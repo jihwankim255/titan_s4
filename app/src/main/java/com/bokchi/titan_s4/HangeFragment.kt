@@ -1,0 +1,55 @@
+package com.bokchi.titan_s4
+
+import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.ImageView
+import androidx.navigation.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+
+
+class hangeFragment : Fragment() {
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+
+        val view = inflater.inflate(R.layout.fragment_hange, container, false)
+
+        val items = mutableListOf<String>()
+        items.add("Hange Zoë")
+        items.add("820년대 9월 5일")
+        items.add("불명")
+
+        val rv = view.findViewById<RecyclerView>(R.id.RV)
+        val rvAdapter = RVAdapter(items)
+
+        rv.adapter = rvAdapter
+        rv.layoutManager = LinearLayoutManager(context)
+
+        val armin = view.findViewById<ImageView>(R.id.armin)
+        armin.setOnClickListener {
+            it.findNavController().navigate(R.id.action_hangeFragment_to_arminFragment)
+        }
+
+        val sasha = view.findViewById<ImageView>(R.id.sasha)
+        sasha.setOnClickListener {
+            it.findNavController().navigate(R.id.action_hangeFragment_to_sashaFragment)
+        }
+
+
+        return view
+    }
+
+}
